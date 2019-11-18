@@ -89,6 +89,6 @@ class Test
 
 };
 
-
+#include "Test.cpp"
 
 #endif

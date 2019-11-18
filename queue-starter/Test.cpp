@@ -16,7 +16,7 @@ Test::Test() {
 
     std::cout << "Test 9: " << "Enqueueing one value and then dequeueing one value makes the queue empty: " << (test_dequeue_removes_normal() ? "PASSED" : "FAILED") << '\n';
     std::cout << "Test 10: " << "Dequeuing on an empty queue throws an error: " << (test_dequeue_throws_on_empty_queue() ? "PASSED" : "FAILED") << '\n';
-
+    
     std::cout << "Test 11: " << "Enqueue one element and the queue is not empty: " << (test_enqueue_adds_elements() ? "PASSED" : "FAILED") << '\n';
     std::cout << "Test 12: " << "Enqueue one element adds the correct element to the queue: " << (test_enqueue_adds_correct_single_element() ? "PASSED" : "FAILED") << '\n';
 
@@ -106,7 +106,7 @@ bool Test::test_peekFront_on_non_empty_queue_large_dequeued() {
  * dequeue()
  */
 bool Test::test_dequeue_removes_normal() {
-    Queue q;
+    Queue q; 
     for(int i = 0; i < 100; i++) {
         q.enqueue(i);
     }
@@ -124,7 +124,6 @@ bool Test::test_dequeue_throws_on_empty_queue() {
     try {
         q.dequeue();
     } catch(std::runtime_error e) {
-        std::cout << e.what() << "\n";
         return true;
     }
     return false;
